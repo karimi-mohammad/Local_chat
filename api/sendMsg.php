@@ -28,6 +28,6 @@ if ($data = file_get_contents("php://input")) {
         $code = 400 ;
     }
 }
-http_response_code();
+http_response_code($code);
 header('content-type: application/json');
 echo json_encode($response);
