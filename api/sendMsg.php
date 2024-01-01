@@ -7,6 +7,7 @@ if ($data = file_get_contents("php://input")) {
         if (isset($data["userName"]) && isset($data["Msg"])) {
             $user = $data["userName"];
             $msg = $data["Msg"];
+            
             try {
                 $stmt = $conn->prepare("INSERT INTO tbl_msgs (user_name,message) VALUES (:USER,:MSG)");
                 $stmt->bindParam(':USER', $user);
