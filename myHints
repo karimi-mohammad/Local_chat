@@ -1,0 +1,21 @@
+
+
+
+Cookies.set('name', 'value', { expires: 7 })
+Cookies.set('name', 'value', { expires: 7, path: '' })
+Cookies.remove('name')
+Cookies.remove('name', { path: '' }) // removed!
+request = {
+    method: 'POST', headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+}
+fetch(url, request)
+    .then(response => response.json())
+    .then(data => {
+        console.log('sas');
+    })
+    .catch(error => {
+
+    })
