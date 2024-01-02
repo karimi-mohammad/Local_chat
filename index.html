@@ -12,88 +12,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Chat</title>
     <link rel="stylesheet" href="./public/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/styles/style.css">
     <style>
-        :root {
-            --first-color: #51515155;
-            --second-color: #8b8b8b55;
-            --border-color: black;
-        }
 
-        body {
-            overflow: hidden;
-            width: 100vw;
-            height: 100vh;
-            background: var(--border-color);
-        }
-
-        .row {
-            margin-left: 0px;
-            margin-right: 0px;
-        }
-
-        .chat {
-            border: 2px solid;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            height: 75vh;
-            background-color: var(--first-color);
-        }
-
-        .form {
-            width: 80%;
-            height: 100%;
-            color: white;
-
-        }
-
-        .send {
-            border: solid 1px var(--border-color);
-            border-radius: 10px;
-            padding: 5px 0px;
-            background-color: var(--second-color);
-            color: white;
-
-        }
-
-        .Message {
-            overflow-y: scroll;
-        }
-
-        .setting {
-            border: solid 1px var(--border-color);
-            border-radius: 10px;
-            margin-top: 10px;
-            background-color: var(--second-color);
-            color: white;
-        }
-
-        .my-msg {
-            background-color: rgba(113, 92, 92, 0.333);
-            float: right;
-        }
-
-        .other-msg {
-            float: left;
-        }
-
-        .chat-msg {
-            margin-top: 1.5vh;
-            color: white;
-            border: var(--second-color) 2.5px solid;
-            padding: 1%;
-            width: 70%;
-
-        }
-
-        .user {
-            font-size: small;
-            color: #b6b6b655;
-            padding-bottom: 1.5vh;
-        }
     </style>
 </head>
 
 <body>
+    <div style="overflow-x: auto;height: 100vh;" class="main-pop">
+        <div class="popup row justify-content-center align-items-center">
+            <div class="dispop col-1 row justify-content-center p-5 rounded-4">
+                <div class="row justify-content-center w-75">
+                    <div class="col-5">
+                        <input type="text" class="w-100" placeholder="Enter Your name" name="" id="">
+                    </div>
+                    <div class="col-2">
+                        <button style="padding-left: 5%;padding-right: 5%;">Change</button>
+                    </div>
+                </div>
+                <div class="col-12 row justify-content-center">
+                    <button class="mt-5 col-2" onclick="closePopup()">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="main row align-items-center justify-content-center p-1">
         <div class="chat mb-4">
             <div class="my-msg chat-msg">
@@ -112,9 +54,6 @@
                     </br>adfd
                 </div>
             </div>
-
-
-
         </div>
         <div class="form row align-items-center justify-content-center">
             <!-- <input type="text" class="col-7" name="Message" id="Message"> -->
@@ -127,6 +66,13 @@
 
         </div>
     </div>
+    <script>
+        function closePopup() {
+
+            console.log(document.querySelector(".main-pop").style.display = "none");  
+
+        }
+    </script>
 </body>
 
 </html>
