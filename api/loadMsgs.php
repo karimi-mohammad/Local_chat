@@ -9,7 +9,7 @@ if ($data = file_get_contents("php://input")) {
     }
 }
 if (!$limit) {
-    $limit = 3;
+    $limit = 6;
 }
 try {
     $stmt = $conn->prepare("SELECT * FROM tbl_msgs ORDER BY id DESC LIMIT :USER");

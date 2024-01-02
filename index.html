@@ -15,13 +15,26 @@
     <link rel="stylesheet" href="./public/styles/style.css">
     <script src="./public/scripts/js.cookie.min.js"></script>
     <script src="./public/scripts/script.js"></script>
-
+    
 </head>
 <script>
+    function closePopup() {
+        document.querySelector(".main-pop").style.display = "none";
+    }
+    function openPopup() {
+        document.querySelector(".main-pop").style.display = "flex";
+    }
     var Chat = new chat();
+    var User = Cookies.get('userName')
+    
     // Chat.send()
     document.addEventListener('DOMContentLoaded', () => {
-
+        if (User) {
+            closePopup()
+            setInterval(()=>{
+                Chat.loadMsgs()
+            },500)
+        }
     })
 </script>
 
@@ -45,22 +58,7 @@
     </div>
     <div class="main row align-items-center justify-content-center p-1">
         <div class="chat mb-4">
-            <div class="my-msg chat-msg">
-                <div class="user">username</div>
-                <div class="msg">
-                    msg \b sdad
-                    <br> dasdas
-                    </br>adfd
-                </div>
-            </div>
-            <div class="other-msg chat-msg">
-                <div class="user">username</div>
-                <div class="msg">
-                    msg \b sdad
-                    <br> dasdas
-                    </br>adfd
-                </div>
-            </div>
+
         </div>
         <div class="form row align-items-center justify-content-center">
             <!-- <input type="text" class="col-7" name="Message" id="Message"> -->
@@ -73,14 +71,6 @@
 
         </div>
     </div>
-    <script>
-        function closePopup() {
-            document.querySelector(".main-pop").style.display = "none";
-        }
-        function openPopup() {
-            document.querySelector(".main-pop").style.display = "flex";
-        }
-    </script>
 </body>
 
 </html>

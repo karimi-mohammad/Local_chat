@@ -11,7 +11,7 @@ request = {
     },
     body: JSON.stringify(data)
 }
-fetch(url, request)
+fetch("./api/sendMsg.php", request)
     .then(response => response.json())
     .then(data => {
         console.log('sas');
