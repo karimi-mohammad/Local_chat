@@ -8,6 +8,10 @@ class chat {
 
         console.log(`saas`);
     }
+    setName() {
+        var userName = document.querySelector("#username").value
+        Cookies.set("userName", userName, { expires: 7 })
+    }
 
 }
 
