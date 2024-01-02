@@ -68,7 +68,7 @@
             <div class="col-1"></div>
             <div class="row col-2">
                 <button class="send col-12">send</button>
-                <button class="setting col-12">setting</button>
+                <button class="setting col-12" onclick="openPopup()">setting</button>
             </div>
 
         </div>
@@ -76,6 +76,9 @@
     <script>
         function closePopup() {
             document.querySelector(".main-pop").style.display = "none";
+        }
+        function openPopup() {
+            document.querySelector(".main-pop").style.display = "flex";
         }
     </script>
 </body>
