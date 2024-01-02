@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    TODO : Setting popup 
+    TODO : Api connection
+    TODO : clean code
+    TODO : Var Colors
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Chat</title>
+    <link rel="stylesheet" href="./public/styles/bootstrap.min.css">
+    <style>
+        :root {
+            --first-color: #51515155;
+            --second-color: #8b8b8b55;
+            --border-color: black;
+        }
+
+        body {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            background: var(--border-color);
+        }
+
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .chat {
+            border: 2px solid;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 75vh;
+            background-color: var(--first-color);
+        }
+
+        .form {
+            width: 80%;
+            height: 100%;
+            color: white;
+
+        }
+
+        .send {
+            border: solid 1px var(--border-color);
+            border-radius: 10px;
+            padding: 5px 0px;
+            background-color: var(--second-color);
+            color: white;
+
+        }
+
+        .Message {
+            overflow-y: scroll;
+        }
+
+        .setting {
+            border: solid 1px var(--border-color);
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: var(--second-color);
+            color: white;
+        }
+
+        .my-msg {
+            background-color: rgba(113, 92, 92, 0.333);
+            float: right;
+        }
+
+        .other-msg {
+            float: left;
+        }
+
+        .chat-msg {
+            margin-top: 1.5vh;
+            color: white;
+            border: var(--second-color) 2.5px solid;
+            padding: 1%;
+            width: 70%;
+
+        }
+
+        .user {
+            font-size: small;
+            color: #b6b6b655;
+            padding-bottom: 1.5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main row align-items-center justify-content-center p-1">
+        <div class="chat mb-4">
+            <div class="my-msg chat-msg">
+                <div class="user">username</div>
+                <div class="msg">
+                    msg \b sdad
+                    <br> dasdas
+                    </br>adfd
+                </div>
+            </div>
+            <div class="other-msg chat-msg">
+                <div class="user">username</div>
+                <div class="msg">
+                    msg \b sdad
+                    <br> dasdas
+                    </br>adfd
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="form row align-items-center justify-content-center">
+            <!-- <input type="text" class="col-7" name="Message" id="Message"> -->
+            <textarea name="Message" class="col-7 Message" id="Message" cols="30" rows="5"></textarea>
+            <div class="col-1"></div>
+            <div class="row col-2">
+                <button class="send col-12">send</button>
+                <button class="setting col-12">setting</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
