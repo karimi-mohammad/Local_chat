@@ -13,11 +13,16 @@
     <title>Local Chat</title>
     <link rel="stylesheet" href="./public/styles/bootstrap.min.css">
     <link rel="stylesheet" href="./public/styles/style.css">
-    <style>
+    <script src="./public/scripts/js.cookie.min.js"></script>
+    <script src="./public/scripts/script.js"></script>
 
-    </style>
 </head>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const Chat = new chat();
+            Chat.send()
+        })
+    </script>
 <body>
     <div style="overflow-x: auto;height: 100vh;" class="main-pop">
         <div class="popup row justify-content-center align-items-center">
@@ -68,9 +73,7 @@
     </div>
     <script>
         function closePopup() {
-
-            console.log(document.querySelector(".main-pop").style.display = "none");  
-
+            document.querySelector(".main-pop").style.display = "none";
         }
     </script>
 </body>
