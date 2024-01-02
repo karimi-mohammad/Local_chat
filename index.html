@@ -17,22 +17,24 @@
     <script src="./public/scripts/script.js"></script>
 
 </head>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const Chat = new chat();
-            Chat.send()
-        })
-    </script>
+<script>
+    var Chat = new chat();
+    // Chat.send()
+    document.addEventListener('DOMContentLoaded', () => {
+
+    })
+</script>
+
 <body>
     <div style="overflow-x: auto;height: 100vh;" class="main-pop">
         <div class="popup row justify-content-center align-items-center">
             <div class="dispop col-1 row justify-content-center p-5 rounded-4">
                 <div class="row justify-content-center w-75">
                     <div class="col-5">
-                        <input type="text" class="w-100" placeholder="Enter Your name" name="" id="">
+                        <input type="text" class="w-100" placeholder="Enter Your name" name="" id="username">
                     </div>
                     <div class="col-2">
-                        <button style="padding-left: 5%;padding-right: 5%;">Change</button>
+                        <button style="padding-left: 5%;padding-right: 5%;" onclick="Chat.setName()">Change</button>
                     </div>
                 </div>
                 <div class="col-12 row justify-content-center">
