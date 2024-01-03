@@ -44,6 +44,10 @@ class chat {
         var userName = document.querySelector("#username").value
         Cookies.set("userName", userName, { expires: 7 })
     }
+    setLimit(){
+        var limit = document.querySelector("#limit").value
+        Cookies.set("limit", limit, { expires: 7 })
+    }
     loadMsgs() {
         const requestOption = {
             method: 'POST', headers: {
