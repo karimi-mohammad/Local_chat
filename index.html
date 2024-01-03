@@ -43,11 +43,21 @@
         <div class="popup row justify-content-center align-items-center">
             <div class="dispop col-12 row justify-content-center p-2 rounded-4">
                 <div class="row justify-content-center">
+                    <div class="col-lg-12 text-1 m-2 mb-4 mt-3 text-center fw-bold">Your user name</div>
                     <div class="col-lg-5">
                         <input type="text" class="w-100" placeholder="Enter Your name" name="" id="username">
                     </div>
-                    <div class="col-lg-2">
-                        <button style="padding-left: 5%;padding-right: 5%;" onclick="Chat.setName()">Change</button>
+                    <div class="col-lg-2 justify-content-center">
+                        <button class="w-100" style="padding-left: 5%;padding-right: 5%;" onclick="Chat.setName()">Change</button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-1 m-2 mb-4 mt-3 text-center fw-bold">limit number of messages for loaded</div>
+                    <div class="col-lg-5">
+                        <input type="text" class="w-100" placeholder="Enter limit" name="" id="username">
+                    </div>
+                    <div class="col-lg-2 ">
+                        <button class="w-100" style="padding-left: 5%;padding-right: 5%;" onclick="Chat.setLimit()">Set limit</button>
                     </div>
                 </div>
                 <div class="col-12 row justify-content-center">
