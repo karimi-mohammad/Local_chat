@@ -11,7 +11,12 @@ class chat {
         })
     }
     copyToBoard(text) {
-        navigator.clipboard.writeText(text)
+        const txtEle = document.createElement('textarea')
+        txtEle.innerText=text
+        document.body.appendChild(txtEle)
+        txtEle.select()
+        document.execCommand('copy')
+        document.body.removeChild(txtEle)
     }
     send() {
         
