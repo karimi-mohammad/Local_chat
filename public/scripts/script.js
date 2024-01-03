@@ -2,6 +2,9 @@ class chat {
     constructor() {
         window.th = this
     }
+    copyToBoard(text){
+        navigator.clipboard.writeText(text)
+    }
     send() {
         var msgText = document.querySelector("#Message").value;
         document.querySelector("#Message").value = "";
