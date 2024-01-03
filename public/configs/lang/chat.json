@@ -1,0 +1,42 @@
+{
+    "send": [
+        "Send",
+        "ارسال"
+    ],
+    "setting": [
+        "Setting",
+        "تنظیمات"
+    ],
+    "yourusername": [
+        "Your user name",
+        "نام کاربری شما"
+    ],
+    "limitnumberofmessagesforloaded": [
+        "limit number of messages for loaded",
+        "محدودیت تعداد پیام ها برای لود"
+    ],
+    "close": [
+        "Close",
+        "بستن"
+    ],
+    "setlimit": [
+        "Set limit",
+        "تنظیم محدودیت"
+    ],
+    "save": [
+        "Save",
+        "ذخیره"
+    ],
+    "enteryourusername": [
+        "Enter your user name",
+        "نام کاربری خود را وارد کنید"
+    ],
+    "enterthenumber": [
+        "Enter the number",
+        "مقدار را وارد کنید"
+    ],
+    "copy": [
+        "Copy",
+        "کپی"
+    ]
+}
