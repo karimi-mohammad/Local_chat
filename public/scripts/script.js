@@ -51,7 +51,7 @@ class chat {
     loadMsgs() {
         var limit = Cookies.get("limit");
         if (!(limit && limit != "")) {
-            limit = 2
+            limit = 20
         }
         const data = { "limit": limit }
         const requestOption = {
