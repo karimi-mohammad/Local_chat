@@ -2,7 +2,7 @@ class chat {
     constructor() {
         window.th = this
     }
-    copyToBoard(text){
+    copyToBoard(text) {
         navigator.clipboard.writeText(text)
     }
     send() {
@@ -98,8 +98,18 @@ class chat {
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('msg');
         msgDiv.innerText = message;
+        const msgBtns = document.createElement('div');
+        const copybtn = document.createElement('button');
+        copybtn.classList.add("p-2")
+        copybtn.classList.add("m-3")
+        // copybtn.classList.add("")
+
+        copybtn.innerText = "<Copy>";
+        copybtn.addEventListener('click', () => { this.copyToBoard(message) });
+        msgBtns.appendChild(copybtn);
         messageDiv.appendChild(userDiv);
         messageDiv.appendChild(msgDiv);
+        messageDiv.appendChild(msgBtns);
         chatContainer.appendChild(messageDiv);
     }
 
