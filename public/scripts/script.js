@@ -2,10 +2,19 @@ class chat {
     constructor() {
         window.th = this
     }
+    scrollToEndChat(){
+        const chatElem = document.querySelector(".chat")
+        chatElem.scrollTo({
+            top: chatElem.scrollHeight,
+            left: 5,
+            behavior: "smooth"
+        })
+    }
     copyToBoard(text) {
         navigator.clipboard.writeText(text)
     }
     send() {
+        
         var msgText = document.querySelector("#Message").value;
         document.querySelector("#Message").value = "";
         var userName = Cookies.get('userName');
@@ -30,7 +39,6 @@ class chat {
                     })
                     .then(data => {
                         this.loadMsgs()
-                        console.log(response);
                     })
                     .catch(error => {
                         console.log(error);
@@ -41,7 +49,7 @@ class chat {
         } else {
             alert("at first you should set a user name")
         }
-
+        this.scrollToEndChat()
     }
     setName() {
         var userName = document.querySelector("#username").value
@@ -81,6 +89,7 @@ class chat {
                         this.createMessageElement(item.user_name, item.message, false);
                     }
                 });
+                
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
