@@ -82,6 +82,9 @@
         color: var(--text-color-2);
         padding-bottom: 1.5vh;
     }
+    .date{
+        font-size: smaller;
+    }
 
     /* popup */
     .popup {

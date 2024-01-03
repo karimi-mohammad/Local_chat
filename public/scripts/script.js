@@ -2,7 +2,7 @@ class chat {
     constructor() {
         window.th = this
     }
-    scrollToEndChat(){
+    scrollToEndChat() {
         const chatElem = document.querySelector(".chat")
         chatElem.scrollTo({
             top: chatElem.scrollHeight,
@@ -12,14 +12,14 @@ class chat {
     }
     copyToBoard(text) {
         const txtEle = document.createElement('textarea')
-        txtEle.innerText=text
+        txtEle.innerText = text
         document.body.appendChild(txtEle)
         txtEle.select()
         document.execCommand('copy')
         document.body.removeChild(txtEle)
     }
     send() {
-        
+
         var msgText = document.querySelector("#Message").value;
         document.querySelector("#Message").value = "";
         var userName = Cookies.get('userName');
@@ -89,19 +89,19 @@ class chat {
                 chatContainer.innerHTML = ""
                 data["data"].forEach(item => {
                     if (item.user_name === Cookies.get("userName")) {
-                        this.createMessageElement(item.user_name, item.message, true);
+                        this.createMessageElement(item.user_name, item.message, true, item.time_sent);
                     } else {
-                        this.createMessageElement(item.user_name, item.message, false);
+                        this.createMessageElement(item.user_name, item.message, false, item.time_sent);
                     }
                 });
-                
+
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
             });
 
     }
-    createMessageElement(user, message, isMyMessage) {
+    createMessageElement(user, message, isMyMessage, date) {
         const chatContainer = document.querySelector('.chat');
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('chat-msg');
@@ -117,13 +117,16 @@ class chat {
         copybtn.classList.add("p-2")
         copybtn.classList.add("m-3")
         // copybtn.classList.add("")
-
+        const dateP = document.createElement('p');
+        dateP.innerText = date;
+        dateP.classList.add("date");
         copybtn.innerText = "<Copy>";
         copybtn.addEventListener('click', () => { this.copyToBoard(message) });
         msgBtns.appendChild(copybtn);
         messageDiv.appendChild(userDiv);
         messageDiv.appendChild(msgDiv);
         messageDiv.appendChild(msgBtns);
+        messageDiv.appendChild(dateP);
         chatContainer.appendChild(messageDiv);
     }
 
