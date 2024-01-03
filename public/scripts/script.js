@@ -44,16 +44,21 @@ class chat {
         var userName = document.querySelector("#username").value
         Cookies.set("userName", userName, { expires: 7 })
     }
-    setLimit(){
+    setLimit() {
         var limit = document.querySelector("#limit").value
         Cookies.set("limit", limit, { expires: 7 })
     }
     loadMsgs() {
+        var limit = Cookies.get("limit");
+        if (!(limit && limit != "")) {
+            limit = 2
+        }
+        const data = { "limit": limit }
         const requestOption = {
             method: 'POST', headers: {
                 'Content-Type': 'application/json'
             },
-
+            body: JSON.stringify(data)
         }
         fetch("./api/loadMsgs.php", requestOption)
             .then(response => {
