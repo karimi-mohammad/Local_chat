@@ -31,11 +31,15 @@
         overflow-x: hidden;
         height: calc(100vh - 200px);
         background-color: var(--first-color);
+        position: relative;
     }
 
     @media (max-width:991.98px) {
         .chat {
-            height: calc(100vh - 300px);
+            height: calc(100vh - 300px) !important;
+        }
+        .down{
+        top:calc(100vh - 350px) !important;
         }
     }
 
@@ -82,9 +86,22 @@
         color: var(--text-color-2);
         padding-bottom: 1.5vh;
     }
-    .date{
+
+    .date {
         font-size: smaller;
     }
+
+    .down {
+        position: sticky;
+        width: var(--down-height);
+        height: min-content;
+        background-color: var(--second-color);
+        text-align: center;
+        color: white;
+        top: calc(100vh - 250px);        float: right;
+
+    }
+
 
     /* popup */
     .popup {
@@ -100,6 +117,7 @@
         width: 70% !important;
 
     }
-    .text-1{
+
+    .text-1 {
         color: white;
     }
