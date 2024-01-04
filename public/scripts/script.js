@@ -1,6 +1,13 @@
 class chat {
     constructor() {
         window.th = this
+        // set down btn
+        document.addEventListener('DOMContentLoaded', () => {
+            const down = document.querySelector(".down")
+            const height = down.clientHeight
+            down.style.setProperty('--down-height', height + "px")
+
+        })
     }
     scrollToEndChat() {
         const chatElem = document.querySelector(".chat")
@@ -85,7 +92,7 @@ class chat {
             })
             .then(data => {
                 data["data"].reverse()
-                const chatContainer = document.querySelector('.chat');
+                const chatContainer = document.querySelector('.content');
                 chatContainer.innerHTML = ""
                 data["data"].forEach(item => {
                     if (item.user_name === Cookies.get("userName")) {
@@ -102,7 +109,7 @@ class chat {
 
     }
     createMessageElement(user, message, isMyMessage, date) {
-        const chatContainer = document.querySelector('.chat');
+        const chatContainer = document.querySelector('.content');
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('chat-msg');
         messageDiv.classList.add(isMyMessage ? 'my-msg' : 'other-msg');
