@@ -38,8 +38,9 @@
         .chat {
             height: calc(100vh - 300px) !important;
         }
-        .down{
-        top:calc(100vh - 350px) !important;
+
+        .down {
+            top: calc(100vh - 350px) !important;
         }
     }
 
@@ -98,8 +99,9 @@
         background-color: var(--second-color);
         text-align: center;
         color: white;
-        top: calc(100vh - 250px);        float: right;
-
+        top: calc(100vh - 250px);
+        float: right;
+        cursor: pointer;
     }
 
 
