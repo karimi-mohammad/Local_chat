@@ -1,6 +1,5 @@
 class chat {
     constructor() {
-        window.th = this
         // set down btn
         document.addEventListener('DOMContentLoaded', () => {
             const down = document.querySelector(".down")
@@ -36,7 +35,6 @@ class chat {
                     },
                     body: JSON.stringify(data)
                 };
-
                 fetch("./api/clearMsgs.php", requestOptions)
                     .then(response => {
                         if (!response.ok) {
@@ -68,7 +66,6 @@ class chat {
         document.body.removeChild(txtEle)
     }
     send() {
-
         var msgText = document.querySelector("#Message").value;
         document.querySelector("#Message").value = "";
         var userName = Cookies.get('userName');
@@ -148,7 +145,6 @@ class chat {
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
             });
-
     }
     createMessageElement(user, message, isMyMessage, date) {
         const chatContainer = document.querySelector('.content');
@@ -178,6 +174,5 @@ class chat {
         messageDiv.appendChild(dateP);
         chatContainer.appendChild(messageDiv);
     }
-
 }
 
