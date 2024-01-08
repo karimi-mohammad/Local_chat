@@ -17,6 +17,48 @@ class chat {
             behavior: "smooth"
         })
     }
+    clearMsgs() {
+        var isAdmin = confirm("This action is intended for admins only. Are you an admin?");
+        if (isAdmin) {
+            var userName = prompt("Please enter your admin username:");
+            var password = prompt("Please enter your admin password:");
+            if (userName === null || userName === "" || password === null || password === "") {
+                alert("Input is not valid");
+            } else {
+                const data = {
+                    "userName": userName,
+                    "password": password
+                };
+                const requestOptions = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                };
+
+                fetch("./api/clearMsgs.php", requestOptions)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok.');
+                        }
+                        console.log(response);
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success === true) {
+                            alert("Success");
+                        } else {
+                            alert(`There is a problem:\n ${data.error}`);
+                        }
+                        this.loadMsgs();
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            }
+        }
+    }
     copyToBoard(text) {
         const txtEle = document.createElement('textarea')
         txtEle.innerText = text
