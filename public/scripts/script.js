@@ -162,7 +162,7 @@ class chat {
         const copybtn = document.createElement('button');
         copybtn.classList.add("p-2")
         copybtn.classList.add("m-3")
-        // copybtn.classList.add("")
+        copybtn.classList.add("copy")
         const dateP = document.createElement('p');
         dateP.innerText = date;
         dateP.classList.add("date");
