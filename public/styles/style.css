@@ -1,5 +1,5 @@
     :root {
-        --first-color: #51515155;
+        --first-color: #222222;
         --second-color: #8b8b8b55;
         --border-color: black;
         --text-color-2: #bdbdbd;
@@ -68,7 +68,7 @@
     }
 
     .my-msg {
-        background-color: rgba(113, 92, 92, 0.333);
+        background-color: #3a3a44;
         float: right;
     }
 
