@@ -85,6 +85,10 @@
         border-radius: 20px;
     }
 
+    .copy {
+        font-size: smaller;
+    }
+
     .user {
         font-size: small;
         color: var(--text-color-2);
