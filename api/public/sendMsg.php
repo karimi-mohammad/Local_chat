@@ -1,5 +1,5 @@
 <?php
-require_once("./configs/databseConn.php");
+require_once("../configs/databseConn.php");
 $code = 200;
 if ($data = file_get_contents("php://input")) {
     $data = json_decode($data, true);

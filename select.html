@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+</head>
+<script>
+    fetch("./api/group/groups.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        })
+        .then(data => {
+
+            console.log(data)
+            const container = document.getElementById('container');
+            data['data'].forEach(item => {
+                const link = document.createElement('a');
+                link.textContent = item.name;
+                link.href = `group.html?url=${item.url}`; // تنظیم URL با پارامتر url
+                container.appendChild(link);
+                const breakTag = document.createElement('br');
+                container.appendChild(breakTag);
+            });
+
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+
+</script>
+
+<body>
+    <div id="container"></div>
+</body>
+
+</html>

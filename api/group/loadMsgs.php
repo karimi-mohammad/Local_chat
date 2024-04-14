@@ -1,5 +1,5 @@
 <?php
-require_once("./configs/databseConn.php");
+require_once("../configs/databseConn.php");
 $code = 200;
 $limit = null;
 if ($data = file_get_contents("php://input")) {
@@ -7,13 +7,17 @@ if ($data = file_get_contents("php://input")) {
     if (isset($data["limit"])) {
         $limit = $data["limit"];
     }
+    if (isset($data["url"])) {
+        $_URL = $data["url"];
+    }
 }
 if (!$limit) {
     $limit = 20;
 }
 try {
-    $stmt = $conn->prepare("SELECT * FROM tbl_msgs ORDER BY id DESC LIMIT :USER");
+    $stmt = $conn->prepare("SELECT * FROM tbl_group_msgs WHERE group_url = :_URL ORDER BY id DESC LIMIT :USER");
     $stmt->bindParam(':USER', $limit, PDO::PARAM_INT);
+    $stmt->bindParam(':_URL', $_URL);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $response = array("Msg" => "ok", "data" => $result);

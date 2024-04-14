@@ -1,4 +1,5 @@
 class chat {
+    gUrl = ''
     constructor() {
         // set down btn
         document.addEventListener('DOMContentLoaded', () => {
@@ -35,7 +36,7 @@ class chat {
                     },
                     body: JSON.stringify(data)
                 };
-                fetch("./api/public/clearMsgs.php", requestOptions)
+                fetch("./api/group/clearMsgs.php", requestOptions)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok.');
@@ -73,7 +74,8 @@ class chat {
             if (msgText && msgText != "") {
                 const data = {
                     "userName": userName,
-                    "Msg": msgText
+                    "Msg": msgText,
+                    "url": this.gUrl
                 }
                 const requestOption = {
                     method: 'POST', headers: {
@@ -81,7 +83,7 @@ class chat {
                     },
                     body: JSON.stringify(data)
                 }
-                fetch("./api/public/sendMsg.php", requestOption)
+                fetch("./api/group/sendMsg.php", requestOption)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok.');
@@ -116,14 +118,14 @@ class chat {
         if (!(limit && limit != "")) {
             limit = 20
         }
-        const data = { "limit": limit }
+        const data = { "limit": limit, "url": this.gUrl }
         const requestOption = {
             method: 'POST', headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         }
-        fetch("./api/public/loadMsgs.php", requestOption)
+        fetch("./api/group/loadMsgs.php", requestOption)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok.');
